@@ -64,5 +64,7 @@ namespace TercerParcial_Centurion.Controllers
             var lista= db.GENERO.ToList().Take(10);
             return View(lista);
         }
+
+
     }
 }

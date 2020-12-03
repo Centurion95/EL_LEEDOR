@@ -1,4 +1,6 @@
-﻿@{
+﻿@model TercerParcial_Centurion.CONTACTO
+
+@{
     ViewBag.Title = "Contacto";
 }
 <!-- Page Header -->
@@ -21,41 +23,50 @@
     <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
             <p>Consultas, dudas, suguerencias e insultos son bienvenidos =)</p>
-            <!-- Contact Form - Enter your email address on line 19 of the mail/contact_me.php file to make this form work. -->
-            <!-- WARNING: Some web hosts do not allow emails to be sent through forms to common mail hosts like Gmail or Yahoo. It's recommended that you use a private domain email address! -->
-            <!-- To use the contact form, your site must be on a live web host with PHP! The form will not work locally! -->
-            <form name="sentMessage" id="contactForm" novalidate>
+
+            @*<form name="sentMessage" id="contactForm" novalidate>*@
+            @*@using (Html.BeginForm())
+                {*@
+            <form method="post" action="@Url.Action("Create", "CONTACTO")">
+
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Nombre</label>
-                        <input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Ingrese su nombre">
+                        <p>Nombre</p>
+                        @*<input type="text" class="form-control" placeholder="Nombre" id="name" required data-validation-required-message="Ingrese su nombre">*@
+                        @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control" } })
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Ingrese su email">
+                        <p>Email</p>
+                        @*<input type="email" class="form-control" placeholder="Email" id="email" required data-validation-required-message="Ingrese su email">*@
+                        @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group col-xs-12 floating-label-form-group controls">
-                        <label>Numero de telefono</label>
-                        <input type="tel" class="form-control" placeholder="Numero de telefono" id="phone" required data-validation-required-message="Ingrese su numero de telefono">
+                        <p>Numero de telefono</p>
+                        @*<input type="tel" class="form-control" placeholder="Numero de telefono" id="phone" required data-validation-required-message="Ingrese su numero de telefono">*@
+                        @Html.EditorFor(model => model.NUMERO, new { htmlAttributes = new { @class = "form-control" } })
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="form-group floating-label-form-group controls">
-                        <label>Mensaje</label>
-                        <textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Ingrese su mensaje"></textarea>
+                        <p>Mensaje</p>
+                        @*<textarea rows="5" class="form-control" placeholder="Mensaje" id="message" required data-validation-required-message="Ingrese su mensaje"></textarea>*@
+                        @Html.EditorFor(model => model.MENSAJE, new { htmlAttributes = new { @class = "form-control" } })
                         <p class="help-block text-danger"></p>
                     </div>
                 </div>
                 <br>
                 <div id="success"></div>
-                <button type="submit" class="btn btn-primary" id="sendMessageButton">Enviar</button>
+                @*<button type="submit" class="btn btn-primary" id="sendMessageButton">Enviar</button>*@
+                <input type="submit" value="Enviar" class="btn btn-default" />
+                @*</form>*@
+                @*  }*@
             </form>
         </div>
     </div>
