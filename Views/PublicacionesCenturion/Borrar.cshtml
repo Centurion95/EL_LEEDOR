@@ -1,0 +1,56 @@
+﻿@model TercerParcial_Centurion.Publicacion
+
+@{
+    ViewBag.Title = "Borrar Publicacion";
+}
+
+<h2>Borrar</h2>
+
+<h3>¿Confirma que desea eliminar este registro?</h3>
+<div>
+    <h4>Publicacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titulo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Texto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Texto)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Si, chau chau adiós.." class="btn btn-default" /> |
+            @Html.ActionLink("Me arrepentí, volver al menú", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TercerParcial_Centurion.Publicacion>
+
+@{
+    ViewBag.Title = "Publicaciones";
+}
+
+<h2>Publicaciones</h2>
+
+<p>
+    @Html.ActionLink("Crear una nueva publiación", "Crear")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Mes)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Titulo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Texto)
+        </th>
+        <th>
+            <u>
+                Acciones
+            </u>
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Texto)
+            </td>
+            <td>
+                @Html.ActionLink("Modificar", "Editar", new { id = item.Id }) |
+                @Html.ActionLink("Ver detalles", "Detalle", new { id = item.Id }) |
+                @Html.ActionLink("Borrar", "Borrar", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

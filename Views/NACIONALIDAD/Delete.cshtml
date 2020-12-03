@@ -1,0 +1,53 @@
+﻿@model TercerParcial_Centurion.NACIONALIDAD
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/img/about-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Nacionalidades</h1>
+                    <span class="subheading">ABM de la tabla Nacionalidades</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <h3>Confirma que desea eliminar este registro?</h3>
+        <br>
+        <div>
+            <h4>NACIONALIDAD</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.DESCRIPCION)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.DESCRIPCION)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Borrar" class="btn btn-default" /> |
+                    @Html.ActionLink("Volver", "Index")
+                </div>
+            }
+        </div>
+
+    </div>
+</div>
