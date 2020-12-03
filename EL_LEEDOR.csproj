@@ -247,6 +247,7 @@
       <DependentUpon>Modelo.tt</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Controllers\GenerosController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -415,6 +416,7 @@
     <Content Include="Views\NACIONALIDAD\Details.cshtml" />
     <Content Include="Views\NACIONALIDAD\Edit.cshtml" />
     <Content Include="Views\NACIONALIDAD\Index.cshtml" />
+    <Content Include="Views\Home\Reporte.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TercerParcial_Centurion.GENERO>
+
+@{
+    ViewBag.Title = "Reporte de Generos";
+}
+
+<!-- Page Header -->
+<header class="masthead" style="background-image: url('/img/about-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="page-heading">
+                    <h1>Reporte de Generos</h1>
+                    <span class="subheading">La lista de todos los generos literarios del sistema</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DESCRIPCION)
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DESCRIPCION)
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
