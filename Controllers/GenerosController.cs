@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace TercerParcial_Centurion
 {
@@ -37,9 +38,30 @@ namespace TercerParcial_Centurion
         {
         }
 
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+
+        // DELETE: api/Marcas/5
+        [ResponseType(typeof(GENERO))]
+        public IHttpActionResult DeleteGenero(int id)
         {
+            GENERO registro = db.GENERO.Find(id);
+            if (registro == null)
+            {
+                return NotFound();
+            }
+
+            db.GENERO.Remove(registro);
+            db.SaveChanges();
+
+            return Ok(registro);
         }
+
+        //// DELETE api/<controller>/5
+        //[HttpPost, ActionName("Delete")]
+        //public void DeleteConfirmed(int id)
+        //{
+        //    GENERO genero = db.GENERO.Find(id);
+        //    db.GENERO.Remove(genero);
+        //    db.SaveChanges();
+        //}
     }
 }
